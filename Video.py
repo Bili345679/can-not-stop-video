@@ -32,8 +32,8 @@ class Video:
         # 原视频
         org_cap = cv2.VideoCapture(self.video_path)
         # 总帧数
-        # self.frame_total = int(org_cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        self.frame_total = 500
+        self.frame_total = int(org_cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        # self.frame_total = 500
         # 帧文件数字长度
         self.frame_no_len = len(str(self.frame_total))
         # 帧率
