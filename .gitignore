@@ -1,0 +1,10 @@
+bit_img/*
+bit_list/*
+org_frame/*
+org_video/*
+rendered_frame/*
+over_video/*
+frame_render_progress/*
+.vscode/*
+**/__pycache__/*
+video/*
