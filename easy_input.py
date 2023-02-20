@@ -64,6 +64,8 @@ def ezinput(
             else:
                 str_val = default
                 val = default
+        elif str_val == default:
+            val = default
         elif type == "int":
             val = int(str_val)
         elif type == "float":

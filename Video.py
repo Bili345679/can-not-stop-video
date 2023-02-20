@@ -42,7 +42,6 @@ class Video:
         self.frame_height = int(org_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         # 帧宽度
         self.frame_width = int(org_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-        ezprint("video_load_over")
 
 
     # 合并视频
