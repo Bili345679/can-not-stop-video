@@ -16,6 +16,8 @@ class FrameRender(Video):
         up_img_move_y,
         down_img_move_x,
         down_img_move_y,
+        start_frame=False,
+        end_frame=False,
     ):
         super().__init__(video_path)
 
@@ -27,6 +29,8 @@ class FrameRender(Video):
         self.up_img_move_y = up_img_move_y
         self.down_img_move_x = down_img_move_x
         self.down_img_move_y = down_img_move_y
+        self.start_frame = 0 if start_frame is False else start_frame
+        self.end_frame = self.frame_total if end_frame is False else end_frame
 
         # 临时帧
         self.render_frame_temp_path_list = [
@@ -42,12 +46,20 @@ class FrameRender(Video):
         org_cap = cv2.VideoCapture(self.video_path)
 
         if process_index == 0:
-            start_index = 0
+            start_index = render_range[0]
             start_time = time.time()
             last_time = time.time()
 
         for frame_index in range(self.frame_total):
             video_read_result, org_frame = org_cap.read()
+
+            # 渲染范围
+            # 开始
+            if frame_index < self.start_frame:
+                continue
+            # 结束
+            if frame_index > self.end_frame:
+                break
 
             if not video_read_result:
                 break

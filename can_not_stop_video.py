@@ -57,6 +57,8 @@ if __name__ == "__main__":
         now_record["up_img_move_y"],
         now_record["down_img_move_x"],
         now_record["down_img_move_y"],
+        now_record["start_frame"],
+        now_record["end_frame"],
     )
 
     # 每个进程负责的帧
@@ -89,8 +91,10 @@ if __name__ == "__main__":
 
     # 合成视频
     video.render_video()
+
     # 删除帧
-    video.remove_render_frame()
+    if now_record["start_frame"] == 0 and now_record["end_frame"] == video.frame_total:
+        video.remove_render_frame()
 
     # 记录完成
     record.set_now_record("over", True)

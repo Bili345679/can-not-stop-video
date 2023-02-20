@@ -79,7 +79,7 @@ class Record:
 
         record["start_frame"] = ezinput("渲染开始帧", "int", 0)
         video = Video(record["video_path"])
-        record["end_frame"] = ezinput("渲染结束帧", int, video.frame_total)
+        record["end_frame"] = ezinput("渲染结束帧", "int", video.frame_total)
 
         record["process_total"] = ezinput("进程数", "int", 1)
 

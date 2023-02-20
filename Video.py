@@ -61,6 +61,8 @@ class Video:
 
         # 合成视频
         for frame_index in range(self.frame_total):
+            if not os.path.exists(self.render_frame_path_list[frame_index]):
+                continue
             frame = cv2.imread(self.render_frame_path_list[frame_index])
             video.write(frame)
             if frame_index % 100 == 0:
