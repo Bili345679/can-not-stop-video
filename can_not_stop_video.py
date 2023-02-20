@@ -19,8 +19,6 @@ if __name__ == "__main__":
     record = Record()
     now_record = record.get_now_record()
 
-    start_time = time.time()
-
     # video_path = "./org_video/SaySo.flv"
     # video_path = "./org_video/test.mp4"
     # video_path = "./org_video/BadApple.mp4"
@@ -32,6 +30,8 @@ if __name__ == "__main__":
     # down_img_move_x = -5
     # down_img_move_y = 0
     # process_total = 10
+
+    start_time = time.time()
 
     # 视频模块
     video = Video(now_record["video_path"])

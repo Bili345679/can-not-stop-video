@@ -8,3 +8,4 @@ frame_render_progress/*
 .vscode/*
 **/__pycache__/*
 video/*
+record_list.json

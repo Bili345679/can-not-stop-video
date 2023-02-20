@@ -1,5 +1,6 @@
 import json
 import os
+import random
 from common import *
 from Video import Video
 
@@ -64,7 +65,11 @@ class Record:
         record["up_down_val"] = ezinput("上下层亮度区分值(0-255)", "int", 128)
 
         record["up_img_seed"] = ezinput("上层雪花图随机种子：", "int", False)
+        if record["up_img_seed"] == False:
+            record["up_img_seed"] = random.randint(0, 1000000)
         record["down_img_seed"] = ezinput("下层雪花图随机种子：", "int", False)
+        if record["down_img_seed"] == False:
+            record["down_img_seed"] = random.randint(0, 1000000)
 
         record["up_img_move_x"] = ezinput("上层雪花图 x 轴移动方向：", "int", 5)
         record["up_img_move_y"] = ezinput("上层雪花图 y 轴移动方向：", "int", 0)
